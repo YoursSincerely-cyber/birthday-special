@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #wrapper {
@@ -51,6 +52,7 @@ body {
   align-items: center;
   font-size: large;
   font-family: cursive;
+
 }
 
 #present #top {
@@ -78,14 +80,21 @@ body {
 #present #cat {
   position: absolute;
   top: 5px;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* border-radius: 10%; */
   left: 0px;
   right: 0px;
   margin: 0 auto;
   transition: all 2s;
   z-index: 0;
+  box-shadow: 0 10px 19px rgba(0, 0, 0, 0.3);
+}
+
+#cat {
+  width: 80%;
+  height: 100%;
+  border-radius: 1rem;
 }
 
 #wish div {
@@ -239,21 +248,29 @@ body {
 
 @media screen and (max-width: 480px) {
   #present {
-    width: 160px;
-    height: 120px;
+    width: 180px;
+    height: 150px;
     /* display: absolute; */
   }
 
   #present #top {
-    width: 180px;
+    width: 200px;
     height: 40px;
     left: -10px;
   }
 
   #wish div {
-    font-size: 28px;
-    letter-spacing: 1px;
+    font-size: 20px;
+    letter-spacing: 8px;
+    display: flexbox;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+
+    
   }
+
 
   .message-box h2 {
     font-size: 18px;
@@ -262,4 +279,5 @@ body {
   .message-box p {
     font-size: 12px;
   }
+
 }

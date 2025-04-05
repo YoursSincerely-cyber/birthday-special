@@ -103,4 +103,40 @@ $(document).ready(function() {
     }
     generateSparkles(60); // 🎇 Create sparkles
 
+    // 🎈 Balloon animation
+    function startBalloons() {
+        // Show balloons in the background gently swaying
+        const balloonCount = 5;
+        for (let i = 0; i < balloonCount; i++) {
+            const balloon = $('<div class="balloon"></div>');
+            balloon.css({
+                left: Math.random() * 100 + '%', // Randomize the left position
+                bottom: '-100px', // Start below the screen
+                opacity: 1,
+                animation: `swayBalloon 5s ease-in-out infinite`
+            });
+            $('#balloonsContainer').append(balloon);
+        }
+
+        // Balloon sway animation (CSS)
+        const balloonStyle = `
+        @keyframes swayBalloon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-200px); }
+            100% { transform: translateY(0); }
+        }`;
+        $('<style>').prop('type', 'text/css').html(balloonStyle).appendTo('head');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Prevent touch scrolling on mobile devices
+        document.body.addEventListener('touchmove', function(e) {
+          e.preventDefault();
+        }, { passive: false });
+        
+        // Prevent wheel/scroll events
+        window.addEventListener('wheel', function(e) {
+          e.preventDefault();
+        }, { passive: false });
+      });
 });
