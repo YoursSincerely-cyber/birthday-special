@@ -17,13 +17,15 @@ body {
   padding: 5vh 0;
   margin: 0;
   border: 0;
-  overflow: hidden;
 }
 
 #wish {
   width: 100%;
   max-width: 1054px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .bounceInDown {
@@ -262,7 +264,7 @@ body {
   #wish div {
     font-size: 20px;
     letter-spacing: 8px;
-    display: flexbox;
+    /* display: contents; */
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -270,7 +272,6 @@ body {
 
     
   }
-
 
   .message-box h2 {
     font-size: 18px;
@@ -280,4 +281,30 @@ body {
     font-size: 12px;
   }
 
+}
+
+
+
+#wish {
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide any overflow */
+  text-overflow: clip; /* Don't show ellipsis */
+}
+
+#wish div {
+  display: inline-block;
+  white-space: nowrap; /* Ensure letters stay in line */
+}
+
+.dua {
+  display: flex;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  #wish div {
+    font-size: 20px;
+    letter-spacing: 1px; /* Reduced from 8px to prevent overflow */
+    margin: 0 -1px; /* Compensate for reduced spacing */
+  }
 }
